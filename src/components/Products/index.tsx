@@ -1,5 +1,4 @@
 import Tag from '../Tag'
-import produtoImg from '../../assets/images/resident.png'
 import { Card, Titulo, Descricao, Infos } from './styles'
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
   image: string
 }
 
-const Product = ({
+const Products = ({
   title,
   category,
   system,
@@ -35,4 +34,4 @@ const Product = ({
   )
 }
 
-export default Product
+export default Products
