@@ -47,30 +47,51 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &.visivel {
+    display: flex;
+  }
 
   .overlay {
-    display: flex;
-    align-items: center;
     width: 100%;
     height: 100%;
-    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.73);
-    opacity: 0;
   }
 `
 
 export const ModalContent = styled.div`
   max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
 
   header {
     display: flex;
+    margin-bottom: 24px;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
 
-  img {
-    display: block;
+  img,
+  iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 480px;
   }
 `
