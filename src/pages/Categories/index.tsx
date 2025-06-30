@@ -1,3 +1,5 @@
+import ProductsList from '../../components/ProductsList'
+
 import {
   useGetActionGamesQuery,
   useGetEsportsGamesQuery,
@@ -5,8 +7,6 @@ import {
   useGetRpgGamesQuery,
   useGetSimulationGamesQuery
 } from '../../services/api'
-
-import ProductsList from '../../components/ProductsList'
 
 const Categories = () => {
   const { data: gamesAcao } = useGetActionGamesQuery()

@@ -29,7 +29,10 @@ const Products = ({
   }
 
   return (
-    <Card to={`/product/${id}`}>
+    <Card
+      title={`Clique aqui para acessar o jogo ${title}`}
+      to={`/product/${id}`}
+    >
       <Infos>
         {infos.map((info) => (
           <Tag key={info}>{info}</Tag>
