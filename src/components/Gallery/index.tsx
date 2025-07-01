@@ -1,7 +1,7 @@
 import Section from '../Section'
 import { GalleryItem } from '../../pages/Home'
 
-import { Items, Item, Action, Modal, ModalContent } from './styles'
+import * as S from './styles'
 
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
@@ -52,9 +52,9 @@ const Gallery = ({ defaultCover, name, items }: Props) => {
   return (
     <>
       <Section title="Galeria" background="black">
-        <Items>
+        <S.Items>
           {items.map((media, index) => (
-            <Item
+            <S.Item
               key={`${media.url}-${index}`}
               onClick={() => {
                 setModal({
@@ -68,34 +68,30 @@ const Gallery = ({ defaultCover, name, items }: Props) => {
                 src={getDefaultThumb(media)}
                 alt={`Mídia ${index + 1} de Nome do jogo`}
               />
-              <Action>
+              <S.Action>
                 <img
                   src={getDefaultIcon(media)}
                   alt="Clique para abri a mídia"
                 />
-              </Action>
-            </Item>
+              </S.Action>
+            </S.Item>
           ))}
-        </Items>
+        </S.Items>
       </Section>
-      <Modal className={modal.isVisible ? 'visivel' : ''}>
-        <ModalContent>
+      <S.Modal className={modal.isVisible ? 'is-visible' : ''}>
+        <S.ModalContent>
           <header>
             <h4>{name}</h4>
-            <img
-              src={close}
-              alt="Clique para fechar"
-              onClick={() => closeModal()}
-            />
+            <img src={close} alt="Clique para fechar" onClick={closeModal} />
           </header>
           {modal.type === 'image' ? (
             <img className="image" src={modal.url} alt="Capa do jogo X" />
           ) : (
             <iframe src={modal.url} frameBorder="0"></iframe>
           )}
-        </ModalContent>
-        <div className="overlay" onClick={() => closeModal()}></div>
-      </Modal>
+        </S.ModalContent>
+        <div className="overlay" onClick={closeModal}></div>
+      </S.Modal>
     </>
   )
 }
